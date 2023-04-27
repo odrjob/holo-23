@@ -12,8 +12,11 @@ public class RayVisualizer : MonoBehaviour
         {
             if (!pointObject.activeSelf)
                 pointObject.SetActive(true);
-            pointObject.transform.position = rayTest.hitInfo.point;
-            pointObject.transform.rotation = Quaternion.LookRotation(rayTest.hitInfo.normal);
+                
+                 Instantiate(pointObject, rayTest.hitInfo.point, Quaternion.identity);
+
+          /* pointObject.transform.position = rayTest.hitInfo.point;
+            pointObject.transform.rotation = Quaternion.LookRotation(rayTest.hitInfo.normal);*/
         }
         else
         {
